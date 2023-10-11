@@ -9,28 +9,29 @@ public class PlayerBullet : MonoBehaviour
 
     void Start()
     {
-        speed = 0.5f;
-    }
+        speed = 8f;
+		//transform.position = new Vector3(transform.position.x, transform.position.y, -6);
+	}
 
     
     void Update()
     {
-        //Get the bullet's current position
-        Vector2 position = transform.position;
+
+		//Get the bullet's current position
+		Vector3 position = transform.position;
 
         //Compute the bullet's new position
-        position = new Vector2 (position.x, position.y + speed * Time.deltaTime);
+        position = new Vector3 (position.x, position.y + speed * Time.deltaTime, position.z = -6);
 
         //Update the bullet's position
         transform.position = position;
 
-        //This is the top-right point of the screen
-        Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2(1, 1));
 
         //If the bullet went outside the screen at the top, then destroy the bullet
-        if(transform.position.y > max.y)
+        if(transform.position.y > 3.4)
         {
             Destroy(gameObject);
         }    
+
     }
 }
