@@ -15,8 +15,17 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		//ship shooting function
+		Shooting();	
+
+		//ship movement function
+		shipMovement();
+	}
+
+	public void Shooting()
+	{
 		//Fire bullets when spacebar is pressed
-		if(Input.GetKeyDown("space"))
+		if (Input.GetKeyDown("space"))
 		{
 			//Instantiate the first bullet
 			GameObject bullet01 = (GameObject)Instantiate(PlayerBulletGO);
@@ -30,9 +39,6 @@ public class Player : MonoBehaviour
 			//Set the bullet2 initial positon
 			bullet02.transform.position = BulletPosition02.transform.position;
 		}
-
-		//ship movement function
-		shipMovement();
 	}
 
 	public void shipMovement()
