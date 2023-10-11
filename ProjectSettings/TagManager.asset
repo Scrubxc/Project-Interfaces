@@ -44,3 +44,6 @@ TagManager:
   - name: Ship
     uniqueID: 1293132995
     locked: 0
+  - name: Bullets
+    uniqueID: 265847565
+    locked: 0
