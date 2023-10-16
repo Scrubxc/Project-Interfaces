@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df13e0c6d89cc9642ad732cb181cbbb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyGO: {fileID: 6181883542672204720, guid: 46bd2dcc5ed03474ca9fcf564fe9bcd1, type: 3}
+  EnemyGO: {fileID: 3694369386824463906, guid: 46bd2dcc5ed03474ca9fcf564fe9bcd1, type: 3}
 --- !u!4 &368342227
 Transform:
   m_ObjectHideFlags: 0
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2905209707368be4b981c155b3631b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipSpeed: 200
+  shipSpeed: 800
   leftX: -4.6
   rightX: 4.6
   PlayerBulletGO: {fileID: 957483947102899906, guid: 74d04571b0d53dc4fbf187a921385e31, type: 3}
