@@ -27,7 +27,7 @@ public class PlayerBullet : MonoBehaviour
         transform.position = position;
 
         //If the bullet went outside the screen at the top, then destroy the bullet
-        if(transform.position.y > 3.4)
+        if(transform.position.y > 4)
         {
             Destroy(gameObject);
         }    
