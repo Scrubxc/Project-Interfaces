@@ -644,8 +644,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipSpeed: 400
-  leftX: -4.6
-  rightX: 4.6
+  leftX: -4.8
+  rightX: 4.8
   PlayerBulletGO: {fileID: 957483947102899906, guid: 74d04571b0d53dc4fbf187a921385e31, type: 3}
   BulletPosition01: {fileID: 602327189}
   BulletPosition02: {fileID: 2112847688}
