@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 	public GameObject PlayerBulletGO; //Bullet Prefab
 	public GameObject BulletPosition01;
 	public GameObject BulletPosition02;
+	public GameObject ExplosionGO; //Explosion Prefab
 
 	// Update is called once per frame
 	void Update()
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
 
 		//ship movement function
 		shipMovement();
+
 	}
 
 	public void Shooting()
@@ -56,13 +58,33 @@ public class Player : MonoBehaviour
 		if (newPosition.x == leftX || newPosition.x == rightX)
 		{
 			// If at the edge, set the velocity to zero to stop moving
-			GetComponent<Rigidbody>().velocity = Vector3.zero;
+			GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 		}
 		else
 		{
 			// Update the position of the spaceship
 			transform.position = newPosition;
 		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		//Detect collision of the player ship with an enemy ship, or with an enemy bullet
+		if ((col.tag == "EnemyShipTag") || (col.tag == "EnemyBulletTag"))
+		{
+			PlayExplosion();
+
+			Destroy(gameObject);
+		}
+	}
+
+	//Function to Instantiate an explosion
+	void PlayExplosion()
+	{
+		GameObject explosion = (GameObject)Instantiate(ExplosionGO);
+
+		//Set the position of the explosion
+		explosion.transform.position = transform.position;
 	}
 }
 

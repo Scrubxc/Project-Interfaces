@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
 
         //Instantiate enemy
         GameObject anEnemy = (GameObject)Instantiate(EnemyGO);
-        anEnemy.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
+        anEnemy.transform.position = new Vector2(Random.Range(min.x, max.x), max.y + anEnemy.gameObject.GetComponent<Transform>().localScale.y);
 
         //Schedule when to spawn next enemy
         ScheduleNextEnemySpawn();

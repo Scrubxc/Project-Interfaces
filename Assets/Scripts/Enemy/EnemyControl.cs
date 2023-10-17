@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class EnemyControl : MonoBehaviour
 {
+    public GameObject ExplosionGO; //Explosion Prefab
 
     float speed; //Enemy flyspeed
 
@@ -31,4 +32,24 @@ public class EnemyControl : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		//Detect collision of the enemy ship with the player ship, or with a player's bullet
+        if((col.tag == "PlayerShipTag") || (col.tag == "PlayerBulletTag"))
+        {
+            PlayExplosion();
+
+            Destroy(gameObject);
+        }
+	}
+
+    //Function to instantiate an explosion
+    void PlayExplosion()
+    {
+        GameObject explosion = (GameObject)Instantiate(ExplosionGO);
+
+        //Set the position of the explosion
+        explosion.transform.position = transform.position;
+    }
 }

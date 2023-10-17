@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1629854669086543743, guid: 430a69a90cc1d5c408c7604d6ca283ac, type: 3}
       propertyPath: m_Name
-      value: EnemyBulletGO
+      value: EnemyBulletGO Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629854669086543743, guid: 430a69a90cc1d5c408c7604d6ca283ac, type: 3}
+      propertyPath: m_TagString
+      value: EnemyBulletTag
       objectReference: {fileID: 0}
     - target: {fileID: 6943382933751177109, guid: 430a69a90cc1d5c408c7604d6ca283ac, type: 3}
       propertyPath: m_RootOrder
@@ -17,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6943382933751177109, guid: 430a69a90cc1d5c408c7604d6ca283ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2095453
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6943382933751177109, guid: 430a69a90cc1d5c408c7604d6ca283ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1733582
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6943382933751177109, guid: 430a69a90cc1d5c408c7604d6ca283ac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8936623377258183381, guid: 430a69a90cc1d5c408c7604d6ca283ac, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8936623377258183381, guid: 430a69a90cc1d5c408c7604d6ca283ac, type: 3}
       propertyPath: m_SortingLayerID
@@ -82,3 +86,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570d828169a84ae49b47020ab9c99e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &2065877504604028363
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643648933832076794}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.001585722, y: 0.001585722}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3446022, y: 0.34460223}
+  m_EdgeRadius: 0
+--- !u!50 &2293775486689734803
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643648933832076794}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

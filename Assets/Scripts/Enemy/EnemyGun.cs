@@ -9,9 +9,12 @@ public class EnemyGun : MonoBehaviour
 
     void Start()
     {
-        //fire an enemy bullet after 1 second
-        Invoke("FireEnemyBullet", 1f);
-    }
+        //fire an enemy bullet after 2 second
+        Invoke("FireEnemyBullet", 2f);
+
+		//fire a second enemy bullet after 3seconds
+		Invoke("FireEnemyBullet", 3f);
+	}
 
     
     void Update()
