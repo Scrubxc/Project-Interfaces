@@ -29,8 +29,6 @@ public class GameManager : MonoBehaviour
         switch(GmState)
         {
             case GameManagerState.Opening:
-                
-
                 //Set play button visible (active)
                 playButton.SetActive(true);
 
@@ -80,4 +78,6 @@ public class GameManager : MonoBehaviour
     {
         SetGameManagerState(GameManagerState.Opening);
     }
+
+    //Implement ChangeToBossState();
 }
