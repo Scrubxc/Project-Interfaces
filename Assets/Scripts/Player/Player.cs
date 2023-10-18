@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -8,11 +9,29 @@ public class Player : MonoBehaviour
 	public float leftX = -3.4f; // Minimum left X position
 	public float rightX = 3.4f;  // Maximum right X position
 
+	public GameObject GameManagerGO; //reference to game manager
+
 	public GameObject PlayerBulletGO; //Bullet Prefab
 	public GameObject BulletPosition01;
 	public GameObject BulletPosition02;
 	public GameObject ExplosionGO; //Explosion Prefab
 
+	//Reference to the lives UI text
+	public Text LivesUIText;
+
+	const int MaxLives = 3; //Maximum player lives
+	int lives; //current player lives
+
+	public void Init()
+	{
+		lives = MaxLives;
+
+		//Update the lives UI text
+		LivesUIText.text = lives.ToString();
+
+		//set this player game object to active
+		gameObject.SetActive (true);
+	}
 	// Update is called once per frame
 	void Update()
 	{
@@ -74,7 +93,18 @@ public class Player : MonoBehaviour
 		{
 			PlayExplosion();
 
-			Destroy(gameObject);
+			//Subtract one life
+			lives--;
+			LivesUIText.text = lives.ToString(); //update lives UI text
+
+			if (lives == 0)
+			{
+				//Change game manager state to game over state
+				GameManagerGO.GetComponent<GameManager>().SetGameManagerState(GameManager.GameManagerState.GameOver);
+
+				//Hide the player's ship
+				gameObject.SetActive(false);
+			}
 		}
 	}
 
