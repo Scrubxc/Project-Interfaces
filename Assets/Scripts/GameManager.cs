@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     //Reference to our game objects
     public GameObject playButton;
-    public GameObject playerShip;
-    public GameObject enemySpawner;
+    public Player playerShip;
+    public EnemySpawner enemySpawner;
     public GameObject GameOverGO;
+    public GameScore gameScore; // Reference to the score text UI game object
+    //public GameObject scoreVisible;
     public enum GameManagerState
     {
         Opening,
@@ -20,12 +24,15 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GmState = GameManagerState.Opening;
+
+      
     }
 
 
     //Function to update the game manager state
     void UpdateGameManagerState()
     {
+
         switch(GmState)
         {
             case GameManagerState.Opening:
@@ -34,6 +41,10 @@ public class GameManager : MonoBehaviour
 
                 break;
             case GameManagerState.Gameplay:
+                //Reset the score
+                //gameScore.GetComponent<GameScore>().Score = 0;
+                gameScore.ResetScore();
+
                 //Hide play button
                 playButton.SetActive(false);
 
@@ -43,18 +54,25 @@ public class GameManager : MonoBehaviour
 				//Hide game over
 				GameOverGO.SetActive(false);
 
+                //Hide score
+                gameScore.Hide();
+
 				//Start enemy spawner
-				enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
+				enemySpawner.ScheduleEnemySpawner();
 
                 break;
             case GameManagerState.GameOver:
                 //Stop enemy spawner
-                enemySpawner.GetComponent<EnemySpawner>().UnscheduleEnemySpawner();
+                enemySpawner.UnscheduleEnemySpawner();
+
                 //Display game over
                 GameOverGO.SetActive(true);
 
-                //Change game manager state to Opening state after 8 seconds
-                Invoke("ChangeToOpeningState", 8f);
+                //Show score
+                gameScore.Show();
+
+				//Change game manager state to Opening state after 8 seconds
+				Invoke("ChangeToOpeningState", 7f);
 
                 break;
         }

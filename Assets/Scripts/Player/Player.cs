@@ -26,8 +26,16 @@ public class Player : MonoBehaviour
 	{
 		lives = MaxLives;
 
+		//Starting position in float (double doesn't work)
+		float yPos = -1.218f;
+
+
+
 		//Update the lives UI text
 		LivesUIText.text = lives.ToString();
+
+		//Reset the player position to the center of the screen
+		transform.position = new Vector2(0, yPos);
 
 		//set this player game object to active
 		gameObject.SetActive (true);
