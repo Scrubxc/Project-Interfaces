@@ -42,7 +42,7 @@ public class EnemyControl : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		//Detect collision of the enemy ship with the player ship, or with a player's bullet, or with a rocket/rocketExplosion
-        if((col.tag == "PlayerShipTag") || (col.tag == "PlayerBulletTag") || (col.tag == "PlayerRocketTag") || (col.tag == "LaserBeamTag"))
+        if((col.tag == "PlayerShipTag") || (col.tag == "PlayerBulletTag") || (col.tag == "PlayerRocketTag") || (col.tag == "PlayerBeamTag"))
         {
             PlayExplosion();
 

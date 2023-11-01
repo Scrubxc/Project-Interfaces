@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
                 //Show score
                 gameScore.Show();
 
-				//Change game manager state to Opening state after 8 seconds
+				//Change game manager state to Opening state after 7 seconds
 				Invoke("ChangeToOpeningState", 7f);
 
                 break;

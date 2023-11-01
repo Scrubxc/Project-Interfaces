@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Player : MonoBehaviour
 {
 	public float shipSpeed = 100.0f; // Speed of Spaceship
 	public float leftX = -3.4f; // Minimum left X position
 	public float rightX = 3.4f;  // Maximum right X position
+	public float laserTime = 0f; //Max laser time
 
 	public GameObject GameManagerGO; //reference to game manager
 
@@ -52,9 +54,11 @@ public class Player : MonoBehaviour
 		//ship movement function
 		shipMovement();
 
+		//fire rocket function
 		fireRocket();
 
-		//shootLaser();
+		//shooting laser function
+		shootLaser();
 
 	}
 
@@ -89,31 +93,27 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	/*private float laserposY = 1.4f;
-	private float laserposX = -4.4f;
+	
 
 
 	public void shootLaser()
 	{
-
-
-		if(Input.GetKeyDown("2"))
+		if (Input.GetKeyDown("2"))
 		{
-			//Instantiate the first laserbeam
-			GameObject laserbeam1 = (GameObject)Instantiate(LaserBeamGO);
-
-			//Set the laserbeam position
-			//laserbeam1.transform.position = new Vector2(laserposX, laserposY).BulletPosition01.transform.position; 
-			//laserbeam1.transform.position = new Vector2(BulletPosition01. + laserbeam1.gameObject.GetComponent<Transform>().localScale.y);
-
-			//Instantiate the second laserbeam
-			GameObject laserbeam2 = (GameObject)Instantiate(LaserBeamGO);
-
-			//Set the laserbeam position
-			laserbeam2.transform.position = BulletPosition02.transform.position;
-
+			LaserBeamGO.SetActive(true);
+			laserTime = 2f;
 		}
-	}*/
+
+		else if (laserTime > 0f)
+        {
+            laserTime -= Time.deltaTime;
+        }
+		
+		if (laserTime <= 0f && LaserBeamGO)
+		{
+            LaserBeamGO.SetActive(false);
+        }
+    }
 
 	public void shipMovement()
 	{
