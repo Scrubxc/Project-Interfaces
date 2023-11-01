@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7889844684083754273}
   m_Layer: 0
   m_Name: PlayerRocketGO
-  m_TagString: Untagged
+  m_TagString: PlayerRocketTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,8 +32,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.9118983, y: 1.9118983, z: 1.9118983}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2874240089110594590}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -169,137 +168,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ecd44b45b95a2418635cbe88ee18ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RocketExplosionGO: {fileID: 2874240089110594587}
---- !u!1001 &7889844683845153117
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7889844684083754268}
-    m_Modifications:
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.1024461
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1024461
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.1024461
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091332, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1935055007474316266, guid: c2da3be6334a6b4409e3952d852390e3, type: 3}
-    - target: {fileID: 5376455531186091332, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091332, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1802159165
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091334, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_Name
-      value: RocketExplosionGO
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376455531186091334, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
---- !u!1 &2874240089110594587 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5376455531186091334, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-  m_PrefabInstance: {fileID: 7889844683845153117}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &7889844683632475495
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2874240089110594587}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.013009429, y: -0.012710452}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.0833333, y: 2.0833333}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.463964, y: 1.3434994}
-  m_EdgeRadius: 0
---- !u!114 &7889844683632475488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2874240089110594587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6ba4d3fbd6038a498c628fc00de301a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2874240089110594590 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5376455531186091331, guid: 99d2dd9857c98634c88e34e7b6c6fd20, type: 3}
-  m_PrefabInstance: {fileID: 7889844683845153117}
-  m_PrefabAsset: {fileID: 0}
+  RocketExplosionGO: {fileID: 7979894459343752645, guid: d39dc804a4423714693f9efa5e821e60, type: 3}

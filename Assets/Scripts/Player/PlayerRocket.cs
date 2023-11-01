@@ -43,10 +43,10 @@ public class PlayerRocket : MonoBehaviour
 		{
 			Destroy(gameObject);
 
-			//GameObject explosion = (GameObject)Instantiate(ExplosionGO);
+			GameObject explosion = (GameObject)Instantiate(RocketExplosionGO);
 
 			//Set the position of the explosion
-			//explosion.transform.position = transform.position;
+			explosion.transform.position = transform.position;
 		}
 	}
 }

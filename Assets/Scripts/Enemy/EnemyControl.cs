@@ -41,8 +41,8 @@ public class EnemyControl : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		//Detect collision of the enemy ship with the player ship, or with a player's bullet
-        if((col.tag == "PlayerShipTag") || (col.tag == "PlayerBulletTag"))
+		//Detect collision of the enemy ship with the player ship, or with a player's bullet, or with a rocket/rocketExplosion
+        if((col.tag == "PlayerShipTag") || (col.tag == "PlayerBulletTag") || (col.tag == "PlayerRocketTag"))
         {
             PlayExplosion();
 
@@ -53,8 +53,24 @@ public class EnemyControl : MonoBehaviour
         }
 	}
 
-    //Function to instantiate an explosion
-    void PlayExplosion()
+	/*void OnTriggerStay2D(Collider2D col)
+	{
+		//Detect if enemy ship is inside rocket collision and destroy it
+        if(col.tag == "PlayerRocketTag")
+        {
+			PlayExplosion();
+
+			//Add 300 points to the score
+			scoreUITextGO.GetComponent<GameScore>().Score += 300;
+
+			Debug.Log("hit");
+			Destroy(gameObject);
+		}
+	}*/
+
+
+	//Function to instantiate an explosion
+	void PlayExplosion()
     {
         GameObject explosion = (GameObject)Instantiate(ExplosionGO);
 
