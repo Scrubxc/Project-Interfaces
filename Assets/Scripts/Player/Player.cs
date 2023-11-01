@@ -12,9 +12,11 @@ public class Player : MonoBehaviour
 	public GameObject GameManagerGO; //reference to game manager
 
 	public GameObject PlayerBulletGO; //Bullet Prefab
+	public GameObject RocketPosition;
 	public GameObject BulletPosition01;
 	public GameObject BulletPosition02;
 	public GameObject ExplosionGO; //Explosion Prefab
+	public GameObject PlayerRocketGO; //Rocket prefab
 
 	//Reference to the lives UI text
 	public Text LivesUIText;
@@ -49,6 +51,8 @@ public class Player : MonoBehaviour
 		//ship movement function
 		shipMovement();
 
+		fireRocket();
+
 	}
 
 	public void Shooting()
@@ -67,6 +71,18 @@ public class Player : MonoBehaviour
 
 			//Set the bullet2 initial positon
 			bullet02.transform.position = BulletPosition02.transform.position;
+		}
+	}
+
+	public void fireRocket()
+	{
+		if (Input.GetKeyDown("1"))
+		{
+			//Instantiate the rocket
+			GameObject rocket = (GameObject)Instantiate(PlayerRocketGO);
+
+			//Set the rocket's initial position
+			rocket.transform.position = RocketPosition.transform.position;
 		}
 	}
 
