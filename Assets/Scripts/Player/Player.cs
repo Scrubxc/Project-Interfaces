@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 	public GameObject BulletPosition02;
 	public GameObject ExplosionGO; //Explosion Prefab
 	public GameObject PlayerRocketGO; //Rocket prefab
+	public GameObject LaserBeamGO; //Laserbeam prefab
 
 	//Reference to the lives UI text
 	public Text LivesUIText;
@@ -53,6 +54,8 @@ public class Player : MonoBehaviour
 
 		fireRocket();
 
+		//shootLaser();
+
 	}
 
 	public void Shooting()
@@ -85,6 +88,32 @@ public class Player : MonoBehaviour
 			rocket.transform.position = RocketPosition.transform.position;
 		}
 	}
+
+	/*private float laserposY = 1.4f;
+	private float laserposX = -4.4f;
+
+
+	public void shootLaser()
+	{
+
+
+		if(Input.GetKeyDown("2"))
+		{
+			//Instantiate the first laserbeam
+			GameObject laserbeam1 = (GameObject)Instantiate(LaserBeamGO);
+
+			//Set the laserbeam position
+			//laserbeam1.transform.position = new Vector2(laserposX, laserposY).BulletPosition01.transform.position; 
+			//laserbeam1.transform.position = new Vector2(BulletPosition01. + laserbeam1.gameObject.GetComponent<Transform>().localScale.y);
+
+			//Instantiate the second laserbeam
+			GameObject laserbeam2 = (GameObject)Instantiate(LaserBeamGO);
+
+			//Set the laserbeam position
+			laserbeam2.transform.position = BulletPosition02.transform.position;
+
+		}
+	}*/
 
 	public void shipMovement()
 	{

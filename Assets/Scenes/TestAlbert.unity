@@ -891,7 +891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &785381596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,6 +914,7 @@ MonoBehaviour:
   BulletPosition02: {fileID: 2112847688}
   ExplosionGO: {fileID: 6993831440901743625, guid: e5df6bde9e273014c9f670debe7c70b7, type: 3}
   PlayerRocketGO: {fileID: 7889844684083754271, guid: 1c7534f27b6e1fb429cbb163414dd1fa, type: 3}
+  LaserBeamGO: {fileID: 6052072896911705843, guid: 56f1987746a8f494eb68d034f39eb86e, type: 3}
   LivesUIText: {fileID: 1995323618}
 --- !u!4 &785381597
 Transform:
@@ -1357,7 +1358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601274063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.008, y: 0.305, z: 0}
+  m_LocalPosition: {x: 0, y: 0.314, z: 0}
   m_LocalScale: {x: 0.74015826, y: 0.6627729, z: 0.6315882}
   m_ConstrainProportionsScale: 0
   m_Children: []
