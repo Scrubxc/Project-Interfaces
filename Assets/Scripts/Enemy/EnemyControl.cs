@@ -5,6 +5,8 @@ using UnityEngine.UIElements;
 
 public class EnemyControl : MonoBehaviour
 {
+    GameObject scoreUITextGO; // Reference to the text UI gameObject
+
     public GameObject ExplosionGO; //Explosion Prefab
 
     float speed; //Enemy flyspeed
@@ -12,6 +14,10 @@ public class EnemyControl : MonoBehaviour
     void Start()
     {
         speed = 1f; //Setting enemy flyspeed  
+
+        //Getting the score text UI
+        scoreUITextGO = GameObject.FindGameObjectWithTag("ScoreTextTag");
+
     }
 
     
@@ -35,21 +41,25 @@ public class EnemyControl : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		//Detect collision of the enemy ship with the player ship, or with a player's bullet
-        if((col.tag == "PlayerShipTag") || (col.tag == "PlayerBulletTag"))
+		//Detect collision of the enemy ship with the player ship, or with a player's bullet, or with a rocket/rocketExplosion
+        if((col.tag == "PlayerShipTag") || (col.tag == "PlayerBulletTag") || (col.tag == "PlayerRocketTag") || (col.tag == "PlayerBeamTag"))
         {
             PlayExplosion();
 
-            Destroy(gameObject);
+			//Add 300 points to the score
+			scoreUITextGO.GetComponent<GameScore>().Score += 300;
+
+			Destroy(gameObject);
         }
 	}
 
-    //Function to instantiate an explosion
-    void PlayExplosion()
+
+	//Function to instantiate an explosion
+	void PlayExplosion()
     {
         GameObject explosion = (GameObject)Instantiate(ExplosionGO);
 
         //Set the position of the explosion
         explosion.transform.position = transform.position;
-    }
+	}
 }

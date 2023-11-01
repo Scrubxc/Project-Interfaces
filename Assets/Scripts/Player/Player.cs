@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Player : MonoBehaviour
 {
 	public float shipSpeed = 100.0f; // Speed of Spaceship
 	public float leftX = -3.4f; // Minimum left X position
 	public float rightX = 3.4f;  // Maximum right X position
+	public float laserTime = 0f; //Max laser time
 
 	public GameObject GameManagerGO; //reference to game manager
 
 	public GameObject PlayerBulletGO; //Bullet Prefab
+	public GameObject RocketPosition;
 	public GameObject BulletPosition01;
 	public GameObject BulletPosition02;
 	public GameObject ExplosionGO; //Explosion Prefab
+	public GameObject PlayerRocketGO; //Rocket prefab
+	public GameObject LaserBeamGO; //Laserbeam prefab
 
 	//Reference to the lives UI text
 	public Text LivesUIText;
@@ -26,8 +31,16 @@ public class Player : MonoBehaviour
 	{
 		lives = MaxLives;
 
+		//Starting position in float (double doesn't work)
+		float yPos = -1.218f;
+
+
+
 		//Update the lives UI text
 		LivesUIText.text = lives.ToString();
+
+		//Reset the player position to the center of the screen
+		transform.position = new Vector2(0, yPos);
 
 		//set this player game object to active
 		gameObject.SetActive (true);
@@ -40,6 +53,12 @@ public class Player : MonoBehaviour
 
 		//ship movement function
 		shipMovement();
+
+		//fire rocket function
+		fireRocket();
+
+		//shooting laser function
+		shootLaser();
 
 	}
 
@@ -61,6 +80,40 @@ public class Player : MonoBehaviour
 			bullet02.transform.position = BulletPosition02.transform.position;
 		}
 	}
+
+	public void fireRocket()
+	{
+		if (Input.GetKeyDown("1"))
+		{
+			//Instantiate the rocket
+			GameObject rocket = (GameObject)Instantiate(PlayerRocketGO);
+
+			//Set the rocket's initial position
+			rocket.transform.position = RocketPosition.transform.position;
+		}
+	}
+
+	
+
+
+	public void shootLaser()
+	{
+		if (Input.GetKeyDown("2"))
+		{
+			LaserBeamGO.SetActive(true);
+			laserTime = 2f;
+		}
+
+		else if (laserTime > 0f)
+        {
+            laserTime -= Time.deltaTime;
+        }
+		
+		if (laserTime <= 0f && LaserBeamGO)
+		{
+            LaserBeamGO.SetActive(false);
+        }
+    }
 
 	public void shipMovement()
 	{

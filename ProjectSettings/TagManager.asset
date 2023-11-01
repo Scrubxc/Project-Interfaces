@@ -8,6 +8,9 @@ TagManager:
   - EnemyShipTag
   - PlayerBulletTag
   - EnemyBulletTag
+  - ScoreTextTag
+  - PlayerRocketTag
+  - PlayerBeamTag
   layers:
   - Default
   - TransparentFX
